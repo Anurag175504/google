@@ -4,217 +4,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Google Homepage Clone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            background-image: url('image copy.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .center {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .search-container:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .search-input {
+            width: 100%;
+            height: 30px;
+            padding: 0 15px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+            background: transparent;
+        }
+
+        .search-icon {
+            margin-right: 10px;
+            color: #9aa0a6;
+            font-size: 18px;
+        }
+
+        .mic-icon, .camera-icon {
+            margin-left: 15px;
+            color: #4285f4;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .favs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .fav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .fav-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .fav-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 5px;
+        }
+
+        .fav-icon img {
+            width: 80%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .fav-text {
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 300px;
+            }
+            
+            .search-container {
+                padding: 10px 20px;
+                max-width: 90%;
+            }
+            
+            .favs {
+                gap: 15px;
+            }
+            
+            .fav-item {
+                width: 80px;
+                margin: 5px;
+            }
+            
+            .fav-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .fav-text {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 200px;
+                margin-bottom: 20px;
+            }
+            
+            .search-container {
+                padding: 8px 15px;
+                border-radius: 30px;
+            }
+            
+            .search-input {
+                font-size: 14px;
+            }
+            
+            .favs {
+                gap: 10px;
+            }
+            
+            .fav-item {
+                width: 70px;
+            }
+            
+            .fav-icon {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-
-    }
-
-    .container {
-        width: 100dvw;
-        height: 100dvh;
-
-        background-image: url(image\ copy.png);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-size: cover;
-        flex-direction: column;
-
-    }
-
-    .center {
-        height: 60%;
-        width: 60%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-    }
-
-    .one {
-        width: 90%;
-        background-color: white;
-        padding: 13px;
-        margin: 10px;
-        border-radius: 50px;
-        
-
-    }
-
-
-    .ll{
-        width: 90%;
-        height: 30px;
-        padding: 10px;
-        border: none;
-        font-size: 20px;
-        outline: none;
-        
-    }
-
-    .h1{
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        background-color: none;
-        
-        margin: 10px;
-        text-align: center;
-        padding: 5px;
-    }
-    .h2{
-        height: 100px;
-        width: 100px;
-        border-radius:50% ;
-        background-color: ;
-        margin: 10px;
-        padding: 5px;
-        text-align: center;
-    }
-    .h3{
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        background-color: ;
-        margin: 10px;
-        padding: 5px;
-        text-align: center;
-    }
-    .h4{
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        background-color: ;
-        margin: 5px;
-        padding: 5px;
-        text-align: center;
-    }
-    .h5{
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        background-color:;
-        margin: 10px;
-        padding: 5px;
-        text-align: center;
-    }
-    .h6{
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        background-color: ;
-        margin: 10px;
-        padding: 5px;
-        text-align: center;
-        
-        
-    }
-    .h7{
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        background-color: 
-        padding: 5px;
-        text-align: center;
-    }
-    .favs{
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-    .size{
-        font-size: 17px;
-    }
-    .text{
-        margin: 10px;
-        text-align: center;
-        color: rgb(246, 244, 244);
-    }
-    .text1{
-        margin: 10px;
-        text-align: center;
-        color: rgb(251, 248, 248);
-    }
-    .un{
-        border-radius: 50%;
-        text-align: center;
-    }
-
-    
-</style>
 
 <body>
-    <div class="container ">
+    <div class="container">
         <div class="center">
-            <img src="google.png" width="500">
-            <!-- <form action=""></form> -->
-
-            <div class="one">
-
-                
-                <i class="fa-solid fa-magnifying-glass  size"></i>
-
-                    <input placeholder="Search google or type a url" type="text" class="ll" />
-
-                    <i class="fa-solid fa-microphone size"></i>
-                    <i class="fa-solid fa-camera  size"></i>
-                    
-            </div>  
+            <img src="google.png" alt="Google Logo" class="logo">
             
-            <div class="favs">
-
-                <div class="h1">
-                    <img src="bootstrap.png" width="80px" class="un">
-                    <h3 class="text">bootstrap</h3>
-                </div>
-                <div class="h2">
-                    <img src="canva.png" width="80px" class="un" alt="">
-                    <h3 class="text1">canva</h3>
-                </div>
-                <div class="h3">
-                    <img src="yt.png"  width="80px " class="un" alt="">
-                    <h3 class="text1">Youtube</h3>
-                </div>
-                <div class="h4">
-                    <img src="gi.png"  width="80px " class="un" alt="">
-                    <h3 class="text1">google</h3>
-                </div>
-                <div class="h5">
-                    <img src="image.png"  width="80px " class="un" alt="">
-                    <h3 class="text1">Mail</h3>
-                </div>
-                <div class="h6">
-                    <img src="twt.png"  width="80px " class="un" alt="">
-                    <h3 class="text1">twitter</h3>
-                </div>
-                <div class="h7">
-                    <img src="image copy 2.png"  width="80px " class="un" alt="">
-                    <h3 class="text1">facebook</h3>
-                </div>
-                
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input placeholder="Search Google or type a URL" type="text" class="search-input">
+                <i class="fa-solid fa-microphone mic-icon"></i>
+                <i class="fa-solid fa-camera camera-icon"></i>
             </div>
             
+            <div class="favs">
+                <div class="fav-item">
+                    <div class="fav-icon">
+                        <img src="bootstrap.png" alt="Bootstrap">
+                    </div>
+                    <div class="fav-text">Bootstrap</div>
+                </div>
+                
+                <div class="fav-item">
+                    <div class="fav-icon">
+                        <img src="canva.png" alt="Canva">
+                    </div>
+                    <div class="fav-text">Canva</div>
+                </div>
+                
+                <div class="fav-item">
+                    <div class="fav-icon">
+                        <img src="yt.png" alt="YouTube">
+                    </div>
+                    <div class="fav-text">YouTube</div>
+                </div>
+                
+                <div class="fav-item">
+                    <div class="fav-icon">
+                        <img src="gi.png" alt="Google">
+                    </div>
+                    <div class="fav-text">Google</div>
+                </div>
+                
+                <div class="fav-item">
+                    <div class="fav-icon">
+                        <img src="image.png" alt="Mail">
+                    </div>
+                    <div class="fav-text">Mail</div>
+                </div>
+                
+                <div class="fav-item">
+                    <div class="fav-icon">
+                        <img src="twt.png" alt="Twitter">
+                    </div>
+                    <div class="fav-text">Twitter</div>
+                </div>
+                
+                <div class="fav-item">
+                    <div class="fav-icon">
+                        <img src="image copy 2.png" alt="Facebook">
+                    </div>
+                    <div class="fav-text">Facebook</div>
+                </div>
+            </div>
         </div>
-        
-        
     </div>
-    
-    
-  </div>
-  
-  
-
 </body>
 
 </html>
